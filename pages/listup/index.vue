@@ -143,9 +143,9 @@
           let chunkedArr = splitToNChunks([...shuffledArr], teamCount.value)
           console.log(chunkedArr)
           chunkedList.value = chunkedArr
-        }, 200)
+        }, 100)
         shuffleTeam.value = false
-      }, 500)
+      }, 200)
     }
   }
 
