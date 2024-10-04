@@ -17,6 +17,22 @@
         </p>
       </div>
 
+      <h2 class="prose prose-2xl font-bold text-black mt-10">팀장</h2>
+      <div class="w-full flex space-x-4 pt-2">
+        <input v-model="leaderInput" placeholder="please type your name." class="w-3/4 input input-bordered input-primary bg-white" @keyup.enter="addToLeaderList()" />
+        <button @click="addToLeaderList()" class="w-1/4 btn btn-primary">입력!</button>
+      </div>
+      <div class="mt-8 space-x-2 space-y-2">
+        <p class="float-right flex">{{ leaderList.length }}명</p>
+        <p
+          v-for="person in leaderList"
+          class="badge badge-neutral badge-outline badge-lg cursor-pointer hover:border-blue-500 hover:border-2 hover:font-bold hover:text-blue-700 hover:p-3"
+          @click="removePersonFromLeaderList(person)"
+        >
+          {{ person }}
+        </p>
+      </div>
+
       <div class="w-full flex space-x-4 mt-48">
         <input v-model="teamCount" type="number" placeholder="팀 갯수" class="w-1/4 !h-auto input input-bordered input-primary bg-white" />
         <button @click="doneAndMakeList()" class="!w-3/4 btn btn-primary btn-lg btn-wide">
@@ -66,6 +82,7 @@
     '안지현',
     '양예진',
     '유용곤',
+    '윤의섭',
     '윤서영',
     '윤선우',
     '이미성',
@@ -79,13 +96,15 @@
     '장윤화',
     '장하영',
     '정다영',
-    '정하랑전도사님',
+    '하랑도사님',
     '조점숙',
     '최대훈',
     '최정운',
     '한재원',
-    '홍승호',
   ])
+
+  const leaderInput = ref('')
+  const leaderList = ref([])
 
   const teamCount = ref(0)
   const shuffleTeam = ref(false)
@@ -101,20 +120,31 @@
     }
   }
 
+  function addToLeaderList() {
+    if (leaderInput.value != '') {
+      const duplIdx = leaderList.value.indexOf(leaderInput.value)
+      if (duplIdx == -1) {
+        leaderList.value.push(leaderInput.value)
+      }
+      leaderInput.value = ''
+    }
+  }
+
   function removePersonFromList(person) {
     const idx = list.value.indexOf(person)
 
     if (idx > -1) list.value.splice(idx, 1)
   }
 
+  function removePersonFromLeaderList(person) {
+    const idx = leaderList.value.indexOf(person)
+
+    if (idx > -1) leaderList.value.splice(idx, 1)
+  }
+
   function shuffle(originList) {
     let v = originList.sort(() => Math.random() - 0.5)
     return v
-  }
-
-  function chunk(arr, size) {
-    let result = arr.reduce((rows, key, index) => (index % size == 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) && rows, [])
-    return result
   }
 
   function splitToNChunks(array, n) {
@@ -130,6 +160,15 @@
       shuffleTeam.value = true
       chunkedList.value = []
 
+      if (leaderList.value.length > 0) {
+        leaderList.value.forEach((e) => {
+          let idx = list.value.indexOf(e)
+          if (idx > -1) {
+            list.value.splice(idx, 1)
+          }
+        })
+      }
+
       let originList = list.value.slice()
 
       let shuffledArr = shuffle(originList)
@@ -138,10 +177,13 @@
 
       setTimeout(() => {
         setTimeout(() => {
-          // let chunkedArr = chunk(shuffledArr, teamCount.value)
-          // console.log(chunkedArr)
           let chunkedArr = splitToNChunks([...shuffledArr], teamCount.value)
           console.log(chunkedArr)
+          if (leaderList.value.length > 0) {
+            chunkedArr.map((item, index) => {
+              item.unshift(leaderList.value[index])
+            })
+          }
           chunkedList.value = chunkedArr
         }, 100)
         shuffleTeam.value = false
