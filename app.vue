@@ -1,8 +1,9 @@
 <template>
   <div>
-    <NuxtLoadingIndicator color="#121212" />
+    <AppHeader></AppHeader>
+    <NuxtLoadingIndicator color="#fff" />
     <NuxtLayout>
-      <NuxtPage :keepalive="{ include: 'Alive' }" />
+      <NuxtPage :keepalive="{ include: 'Alive' }" class="pt-16" />
     </NuxtLayout>
   </div>
 </template>

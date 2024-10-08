@@ -1,10 +1,10 @@
 <template>
-  <div class="h-screen w-full flex">
-    <div class="w-2/5 h-full px-20 py-12 bg-white">
+  <div class="h-screen w-full md:flex block">
+    <div class="w-full md:w-2/5 h-full px-10 py-4 md:px-20 md:py-12 bg-white">
       <h2 class="prose prose-2xl font-bold text-black">명단</h2>
       <div class="w-full flex space-x-4 pt-2">
-        <input v-model="name" placeholder="please type your name." class="w-3/4 input input-bordered input-primary bg-white" @keyup.enter="addToList()" />
-        <button @click="addToList()" class="w-1/4 btn btn-primary">입력!</button>
+        <input v-model="name" placeholder="이름 입력" class="w-3/4 input input-bordered input-neutral bg-white" @keyup.enter="addToList()" />
+        <button @click="addToList()" class="w-1/4 btn btn-neutral">입력!</button>
       </div>
       <div class="mt-8 space-x-2 space-y-2">
         <p class="float-right flex">{{ list.length }}명</p>
@@ -14,13 +14,14 @@
           @click="removePersonFromList(person)"
         >
           {{ person }}
+          <i class="ri-close-line"></i>
         </p>
       </div>
 
       <h2 class="prose prose-2xl font-bold text-black mt-10">팀장</h2>
       <div class="w-full flex space-x-4 pt-2">
-        <input v-model="leaderInput" placeholder="please type your name." class="w-3/4 input input-bordered input-primary bg-white" @keyup.enter="addToLeaderList()" />
-        <button @click="addToLeaderList()" class="w-1/4 btn btn-primary">입력!</button>
+        <input v-model="leaderInput" placeholder="이름 입력" class="w-3/4 input input-bordered input-neutral bg-white" @keyup.enter="addToLeaderList()" />
+        <button @click="addToLeaderList()" class="w-1/4 btn btn-neutral">입력!</button>
       </div>
       <div class="mt-8 space-x-2 space-y-2">
         <p class="float-right flex">{{ leaderList.length }}명</p>
@@ -34,8 +35,8 @@
       </div>
 
       <div class="w-full flex space-x-4 mt-48">
-        <input v-model="teamCount" type="number" placeholder="팀 갯수" class="w-1/4 !h-auto input input-bordered input-primary bg-white" />
-        <button @click="doneAndMakeList()" class="!w-3/4 btn btn-primary btn-lg btn-wide">
+        <input v-model="teamCount" type="number" placeholder="팀 갯수" class="w-1/4 !h-auto input input-bordered input-neutral bg-white" />
+        <button @click="doneAndMakeList()" class="!w-3/4 btn btn-neutral btn-lg btn-wide">
           <p v-if="shuffleTeam == false">팀 만들기!</p>
           <span v-else class="loading loading-spinner"></span>
         </button>
@@ -43,22 +44,24 @@
 
       <!-- <button @click="myChunk(5)" class="w-1/4 btn btn-primary">FOR TEST!</button> -->
     </div>
-    <div class="w-3/5 h-full bg-blue-500 px-20 py-12">
-      <h2 class="prose prose-2xl font-bold text-black">팀</h2>
+    <div class="w-full md:w-3/5 h-full bg-neutral-700 px-10 py-4 md:px-20 md:py-12">
+      <h2 class="prose prose-2xl font-bold text-white dark:text-white">팀</h2>
       <div v-if="chunkedList.length > 0 && shuffleTeam == false" class="space-y-4 pt-2">
         <div v-for="team in chunkedList" class="shadow w-full py-4 px-4 bg-white rounded-lg space-x-2 space-y-2">
           <div class="flex justify-between">
             <p class="font-black text-black font-lg">TEAM. {{ team[0] }}</p>
             <p class="">{{ team.length }}명</p>
           </div>
-          <div class="badge badge-primary badge-lg" v-for="person in team">{{ person }}</div>
+          <div class="badge badge-success badge-lg" v-for="person in team">{{ person }}</div>
         </div>
       </div>
       <div v-if="shuffleTeam == true" class="space-y-4 pt-2">
         <div v-for="skeleton in teamCount" class="skeleton h-22 w-full"></div>
       </div>
 
-      <button @click="goToPlayGame()" v-if="chunkedList.length > 0" class="btn btn-active btn-lg btn-wide fixed bottom-20 w-[calc(60%-160px)]">게임하러 가기 ></button>
+      <button @click="goToPlayGame()" v-if="chunkedList.length > 0" class="btn btn-active btn-lg btn-wide fixed bottom-10 md:bottom-20 w-[calc(86%-20px)] md:w-[calc(60%-160px)]">
+        게임하러 가기 >
+      </button>
     </div>
   </div>
 </template>
