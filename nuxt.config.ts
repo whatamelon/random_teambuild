@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   app: {
     head: {
+      title: 'Random Team',
       meta: [
         { charset: 'utf-8' },
         {
@@ -13,6 +14,49 @@ export default defineNuxtConfig({
         {
           name: 'author',
           content: 'denny',
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          property: 'og:title',
+          content: `Random Team`,
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          property: 'description',
+          content: `Make Random Team for your own team game`,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          property: 'og:description',
+          content: `Make Random Team for your own team game`,
+        },
+        {
+          hid: 'url',
+          name: 'url',
+          content: ``,
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          property: 'og:url',
+          content: ``,
+        },
+        {
+          hid: 'og:site_name',
+          name: 'og:site_name',
+          property: 'og:site_name',
+          content: `Random Team`,
+        },
+        {
+          name: 'app-mobile-web-app-title',
+          content: `Random Team`,
+        },
+        {
+          name: 'application-name',
+          content: `Random Team`,
         },
         {
           hid: 'type',
@@ -39,6 +83,11 @@ export default defineNuxtConfig({
         },
       ],
       link: [
+        {
+          rel: 'canonical',
+          href: ``,
+        },
+        { rel: 'icon', type: 'image/png', href: `` },
         {
           rel: 'stylesheet',
           as: 'style',
