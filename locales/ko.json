@@ -1,0 +1,22 @@
+{
+    "hello": "안녕, {name}!",
+    "playerList":"플레이어 명단",
+    "teamLeaders":"팀장 명단",
+    "writeName": "이름을 입력해주세요!",
+    "writeNameNotRequired": "이름을 입력해주세요! (필수X)",
+    "enter": "입력!",
+    "teamCount":"팀 갯수",
+    "reset": "전체삭제",
+    "makeTeam":"랜덤 팀 구성!",
+    "playGame":"게임시작!",
+    "totalCount":"{count}명",
+    "language":"언어",
+    "sureReset":"정말 명단을 전체 삭제 하시겠습니까?",
+    "noCountOrList":"팀 갯수 혹은 참가자 명단이 비어있어요! 다시 한 번 확인해주세요!",
+    "howToUse": "어떻게 사용하나요? click!",
+    "tutorialOne": "1. 플레이어의 이름을 입력해주세요.",
+    "tutorialSecond": "2. 필요하다면 팀장 이름도 적어주세요.(아래로 스크롤!)",
+    "tutorialThird": "3. 팀 갯수를 입력하고, 랜덤 팀 구성 버튼을 눌러주세요!",
+    "tutorialLast": "4. 팀 세팅이 마음에 드시다면, 게임 시작 버튼을 눌러서 게임을 시작하세요!",
+    "goRealGame": "진짜 게임하러가기!"
+  }

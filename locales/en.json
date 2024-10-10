@@ -1,0 +1,23 @@
+{
+    "hello": "Hello, {name}!",
+    "playerList":"Player List",
+    "teamLeaders":"Team Leaders",
+    "writeName": "write name",
+    "writeNameNotRequired": "write name (not required)",
+    "enter": "Enter!",
+    "teamCount":"count",
+    "reset": "reset",
+    "makeTeam":"Make Random Team!",
+    "playGame":"Play Game!",
+    "totalCount":"{count} player",
+    "language":"language",
+    "sureReset":"Are you sure, reset the list?",
+    "noCountOrList":"Please Type team count or player list!",
+    "howToUse": "How Can I Use it? click!",
+    "tutorialOne": "1. Write every player's name.",
+    "tutorialSecond": "2. Write leader's name, if you need! (scroll to bottom!)",
+    "tutorialThird": "3. Write team's count and click Make random team Button!",
+    "tutorialLast": "4. Random team set's are done, then click play game Button!",
+    "goRealGame": "Go to Real Game!"
+
+}

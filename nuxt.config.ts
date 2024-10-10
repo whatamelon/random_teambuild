@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   app: {
     head: {
-      title: 'Play Team',
+      title: 'Play Team | 랜덤팀구성',
       meta: [
         { charset: 'utf-8' },
         {
@@ -19,44 +19,44 @@ export default defineNuxtConfig({
           hid: 'og:title',
           name: 'og:title',
           property: 'og:title',
-          content: `Random Team`,
+          content: `Play Team | 랜덤팀구성`,
         },
         {
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Make Play Team for your own team game`,
+          content: `Make Play Team for your own team game | 명단으로 랜덤하게 팀을 만들어요!`,
         },
         {
           hid: 'og:description',
           name: 'og:description',
           property: 'og:description',
-          content: `Make Random Team for your own team game`,
+          content: `Make Random Team for your own team game | 명단으로 랜덤하게 팀을 만들어요!`,
         },
         {
           hid: 'url',
           name: 'url',
-          content: ``,
+          content: `https://playteam.site`,
         },
         {
           hid: 'og:url',
           name: 'og:url',
           property: 'og:url',
-          content: ``,
+          content: `https://playteam.site`,
         },
         {
           hid: 'og:site_name',
           name: 'og:site_name',
           property: 'og:site_name',
-          content: `Play Team`,
+          content: `Play Team | 랜덤팀구성`,
         },
         {
           name: 'app-mobile-web-app-title',
-          content: `Play Team`,
+          content: `Play Team | 랜덤팀구성`,
         },
         {
           name: 'application-name',
-          content: `Play Team`,
+          content: `Play Team | 랜덤팀구성`,
         },
         {
           hid: 'type',
@@ -85,9 +85,9 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'canonical',
-          href: ``,
+          href: `https://playteam.site`,
         },
-        { rel: 'icon', type: 'image/png', href: `` },
+        { rel: 'icon', type: 'image/png', href: `/favicon.ico` },
         {
           rel: 'stylesheet',
           as: 'style',
@@ -120,7 +120,7 @@ export default defineNuxtConfig({
       ]
     },
   },
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
   components: {
     global: true,
     dirs: ['~/components'],
