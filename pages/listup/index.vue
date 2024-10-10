@@ -4,7 +4,7 @@
       <h2 class="prose prose-2xl font-bold text-black">Players List</h2>
       <div class="w-full flex space-x-4 pt-2">
         <input v-model="name" placeholder="write name" class="w-3/4 input input-bordered input-neutral bg-white" @keyup.enter="addToList()" />
-        <button @click="addToList()" class="w-1/4 btn btn-neutral">Enter!</button>
+        <button @click="addToList()" class="w-1/4 btn btn-neutral !bg-[#4dabf7] text-white !border-[#4dabf7]">Enter!</button>
       </div>
       <div class="mt-8 space-x-2 space-y-2">
         <p class="float-right flex">total. {{ list.length }}</p>
@@ -21,7 +21,7 @@
       <h2 class="prose prose-2xl font-bold text-black mt-10">Team Leaders</h2>
       <div class="w-full flex space-x-4 pt-2">
         <input v-model="leaderInput" placeholder="write name" class="w-3/4 input input-bordered input-neutral bg-white" @keyup.enter="addToLeaderList()" />
-        <button @click="addToLeaderList()" class="w-1/4 btn btn-neutral">Enter!</button>
+        <button @click="addToLeaderList()" class="w-1/4 btn btn-neutral !bg-[#4dabf7] text-white !border-[#4dabf7]">Enter!</button>
       </div>
       <div class="mt-8 space-x-2 space-y-2">
         <p class="float-right flex">total. {{ leaderList.length }}</p>
@@ -36,7 +36,7 @@
 
       <div class="w-full flex space-x-4 pt-48 pb-10 md:pb-0">
         <input v-model="teamCount" type="number" placeholder="팀 갯수" class="w-1/4 !h-auto input input-bordered input-neutral bg-white" />
-        <button @click="doneAndMakeList()" class="!w-3/4 btn btn-neutral btn-lg btn-wide">
+        <button @click="doneAndMakeList()" class="!w-3/4 btn btn-neutral btn-lg btn-wide !bg-[#4dabf7] text-white !border-[#4dabf7]">
           <p v-if="shuffleTeam == false">Make Team!</p>
           <span v-else class="loading loading-spinner"></span>
         </button>
@@ -52,14 +52,14 @@
             <p class="font-black text-black font-lg">TEAM. {{ team[0] }}</p>
             <p class="">{{ team.length }}명</p>
           </div>
-          <div class="badge badge-success badge-lg" v-for="person in team">{{ person }}</div>
+          <div class="badge badge-success badge-lg  !bg-[#228be6] text-white !border-[#228be6]" v-for="person in team">{{ person }}</div>
         </div>
       </div>
       <div v-if="shuffleTeam == true" class="space-y-4 pt-2">
         <div v-for="skeleton in teamCount" class="skeleton h-22 w-full"></div>
       </div>
 
-      <button @click="goToPlayGame()" v-if="chunkedList.length > 0" class="btn btn-neutral btn-lg btn-wide fixed bottom-10 md:bottom-20 w-[calc(86%-20px)] md:w-[calc(60%-160px)]">Play Game!</button>
+      <button @click="goToPlayGame()" v-if="chunkedList.length > 0" class="btn btn-neutral !bg-[#4dabf7] text-white !border-[#4dabf7] btn-lg btn-wide fixed bottom-10 md:bottom-20 w-[calc(86%-20px)] md:w-[calc(60%-160px)]">Play Game!</button>
     </div>
   </div>
 </template>

@@ -6,7 +6,7 @@
           <p class="font-black text-black font-lg">TEAM. {{ team[0] }}</p>
           <p class="">{{ team.length }}명</p>
         </div>
-        <div class="badge badge-success badge-lg" v-for="person in team">{{ person }}</div>
+        <div class="badge badge-success badge-lg   !bg-[#228be6] text-white !border-[#228be6]" v-for="person in team">{{ person }}</div>
       </div>
     </div>
   </div>

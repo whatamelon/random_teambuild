@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   app: {
     head: {
-      title: 'Random Team',
+      title: 'Play Team',
       meta: [
         { charset: 'utf-8' },
         {
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
           hid: 'description',
           name: 'description',
           property: 'description',
-          content: `Make Random Team for your own team game`,
+          content: `Make Play Team for your own team game`,
         },
         {
           hid: 'og:description',
@@ -48,15 +48,15 @@ export default defineNuxtConfig({
           hid: 'og:site_name',
           name: 'og:site_name',
           property: 'og:site_name',
-          content: `Random Team`,
+          content: `Play Team`,
         },
         {
           name: 'app-mobile-web-app-title',
-          content: `Random Team`,
+          content: `Play Team`,
         },
         {
           name: 'application-name',
-          content: `Random Team`,
+          content: `Play Team`,
         },
         {
           hid: 'type',
@@ -112,6 +112,12 @@ export default defineNuxtConfig({
           href: 'https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css',
         },
       ],
+      script: [
+        {
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933164638740144",
+          crossorigin: 'anonymous'
+        }
+      ]
     },
   },
   modules: ['@nuxtjs/tailwindcss'],
