@@ -17,12 +17,12 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@intlify/shared": "^10.0.4",
     "@intlify/unplugin-vue-i18n": "^5.2.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.15",
     "daisyui": "^4.12.10",
-    "shared^9.7.1": "link:@intlify/shared^9.7.1",
     "vue-i18n": "^10.0.4"
   }
 }
