@@ -1,4 +1,6 @@
-import i18n from '@nuxtjs/i18n'
+import { resolve, dirname } from 'node:path'
+import { fileURLToPath } from 'url'
+import VueI18nVitePlugin from '@intlify/unplugin-vue-i18n/vite'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
@@ -126,6 +128,16 @@ export default defineNuxtConfig({
       strictMessage: false,
       escapeHtml: true,
     },
+  },
+  build: {
+    transpile: ['vue-i18n'],
+  },
+  vite: {
+    plugins: [
+      VueI18nVitePlugin({
+        include: [resolve(dirname(fileURLToPath(import.meta.url)), './locales/*.json')],
+      }),
+    ],
   },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
   components: {
