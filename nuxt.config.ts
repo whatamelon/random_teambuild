@@ -1,4 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import i18n from '@nuxtjs/i18n'
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: false },
@@ -114,10 +115,16 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933164638740144",
-          crossorigin: 'anonymous'
-        }
-      ]
+          src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7933164638740144',
+          crossorigin: 'anonymous',
+        },
+      ],
+    },
+  },
+  i18n: {
+    compilation: {
+      strictMessage: false,
+      escapeHtml: true,
     },
   },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
