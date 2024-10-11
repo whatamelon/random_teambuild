@@ -22,6 +22,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.15",
     "daisyui": "^4.12.10",
+    "shared^9.7.1": "link:@intlify/shared^9.7.1",
     "vue-i18n": "^10.0.4"
   }
 }
