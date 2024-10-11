@@ -10,8 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "^8.5.5",
-    "nuxt": "^3.13.0",
+    "@nuxtjs/i18n": "9.0.0-rc.2",
+    "nuxt": "^3.13.2",
     "remixicon": "^4.3.0",
     "vue": "latest",
     "vue-router": "latest"
@@ -22,12 +22,15 @@
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.15",
-    "daisyui": "^4.12.10",
+    "daisyui": "^4.12.13",
     "vue-i18n": "^10.0.4"
   },
   "overrides": {
     "@intlify/h3": {
-      "@intlify/core-base": "^10.0.3"
+      "@intlify/core": "^10"
+    },
+    "@intlify/bundle-utils": {
+      "@intlify/message-compiler": "^10"
     }
   }
 }
